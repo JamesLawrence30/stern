@@ -1,0 +1,21 @@
+# OS/editor
+.DS_Store
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Envs (anywhere in repo)
+.venv/
+.venv*/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (raw/large) - keep processed small outputs if you want
+**/data/
+**/*.xlsx
+**/*.parquet
