@@ -35,6 +35,8 @@
 - Implement the baseline moving-average backtests and save processed outputs into `data/ag_futures/processed/` when the notebook is run.
 - Inspect the NDVI inventory from the local Earthdata folder and explicitly block the overlay when coverage is too short.
 - Add a MOD13A2 HDF4 reader hook that uses `pyhdf` when available, with a clear error if the parser dependency is missing.
+- Keep the main notebook on a CSV-first workflow with explicit refresh flags instead of unconditional live downloads.
+- Use a separate builder notebook for any future Yahoo probing or corn-cache regeneration: [corn_futures_data_builder.ipynb](/Users/jlaw/projects/stern/systematic-investing/notebooks/corn_futures_data_builder.ipynb).
 
 ## Data Folder Map
 - `data/ag_futures/raw/futures/`
@@ -56,6 +58,8 @@
   - created the local `ag_futures` data scaffold
   - narrowed the notebook MVP to `corn + NDVI only`
   - added explicit logic for the current Earthdata inventory check
+  - added `REFRESH_CORN_FROM_YAHOO = False` to keep the project notebook on a stable local-cache path
+  - split the corn-history retrieval workflow into a separate builder notebook
 - Blocked:
   - the local MOD13A2 inventory still needs to look like a real 16-day series before the NDVI overlay is credible
   - the notebook now checks both total coverage and median gap spacing so it can distinguish real time-series pulls from annual snapshots
