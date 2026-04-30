@@ -15,6 +15,9 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
+# Matplotlib
+.mplconfig/
+
 # Data (raw/large) - keep processed small outputs if you want
 **/data/
 **/*.xlsx
