@@ -53,6 +53,14 @@ The final raw-strategy optimization sample is slightly shorter because every str
 
 - `6,159` daily rows from `2001-10-02` to `2026-04-07`
 
+In the report and notebook, this shorter window is called the **common NDVI-overlap sample**. That means the single shared date range where:
+
+- the NDVI series exists,
+- the relevant futures series exist, and
+- every raw strategy has enough lookback history to produce returns.
+
+Using that common sample makes all strategy comparisons apples-to-apples.
+
 ### Futures data
 
 Corn and wheat are stored as continuous, back-adjusted futures series. The project uses those adjusted close series so that standard backtests are not distorted by contract-roll jumps.
@@ -167,7 +175,7 @@ This already says something important: the classic technical sleeves are not equ
 
 ## Why Portfolio Construction Was Necessary
 
-The notebook includes a correlation matrix of raw strategy returns on the common NDVI-overlap sample. The purpose of that chart is to test whether diversification is real.
+The notebook includes a correlation matrix of raw strategy returns on the common NDVI-overlap sample, meaning the single shared evaluation window where NDVI, futures data, and all raw strategy return series are simultaneously available. The purpose of that chart is to test whether diversification is real.
 
 The main conclusion from the correlation structure is:
 
